@@ -1,0 +1,173 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    overflow: hidden;
+}
+h1 {
+    font-size: 40px;
+}
+/*Old code*/
+/*h2 {*/
+/*    display: inline-block;*/
+/*    margin-right: 50px;*/
+/*    margin-left: 50px;*/
+/*    user-select: none;*/
+/*    cursor: pointer;*/
+/*}*/
+.emoji-group {
+    display: inline-block;
+    margin: 0 25px;
+    text-align: center;
+    vertical-align: top;
+    width: 120px;
+}
+
+h2 {
+    margin: 0;
+    user-select: none;
+    cursor: pointer;
+}
+
+h4 {
+    margin: 5px 0 0 0;
+    font-size: 12px;
+    user-select: none;
+    color: black;
+}
+.required-emojis {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%); /* Centers horizontally */
+    text-align: center;
+}
+#textbox {
+    display: block;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    resize: none;
+}
+#textboxlabel {
+    text-align: center;
+}
+.used {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.textboxwrap {
+    position: relative;
+    display: inline-block;
+    user-select: none;
+}
+#optionals-button {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    left: -55px;
+    bottom: 9px;
+}
+#timer {
+    font-size: 20px;
+    position: absolute;
+    left: -78px;
+    bottom: 529px;
+}
+#optionals-slots {
+    position: absolute;
+    bottom: 482px;  /* About 38px below optionals-text (553px - 38px) */
+    right: -214px;  /* Same horizontal position as optionals-text */
+    margin-top: 4px;
+    width: 200px;   /* Give it enough width for the emoji names */
+}
+.opt-slot {
+    min-height: 1.2em;   /* reserves a line of height even when empty */
+    line-height: 1.2em;  /* consistent line box */
+    margin: 2px 0;
+    font-size: 16px;
+    white-space: nowrap; /* keep “😵‍💫- Spiral Eyes” on one line */
+}
+#optionals-text {
+    font-size: 20px;
+    position: absolute;
+    bottom: 553px;
+    right: -180px;
+    cursor: default;
+}
+/* Hide the entire wrapper by default */
+.optionals-wrap {
+    display: none;
+    position: absolute;
+    left: -270px;
+    bottom: 55px;
+}
+/* Show when toggled */
+.optionals-wrap.open {
+    display: block;
+}
+/* Image styling */
+.optionals-wrap img {
+    width: 250px; /* Set a specific size */
+    height: auto;
+    display: block;
+}
+.text-container {
+    position: absolute;
+    top: 5px;
+    right: 3px;
+    left: 5px;           /* Add left boundary */
+    bottom: 5px;         /* Add bottom boundary */
+    text-align: right;
+    overflow-y: auto;    /* Enable vertical scrolling */
+    overflow-x: hidden;  /* Prevent horizontal scrolling */
+    padding: 5px;        /* Some padding from edges */
+}
+/* Text overlay */
+.text-container h2 {
+    color: black;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+    user-select: none;
+    cursor: default;
+    margin: 2px 0;
+}
+
+.text-container p {
+    margin: 0;
+    font-size: 24px; /* Remove default paragraph margins */
+}
+
+.optional-emoji {
+    cursor: pointer;
+    user-select: none;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.optional-emoji:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.optional-emoji.used {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+#char-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 4px;
+    font-size: 14px;
+    color: black;
+    user-select: none;
+    pointer-events: none; /* Prevents interfering with textarea */
+    z-index: 1; /* Ensures it appears above textarea */
+}
