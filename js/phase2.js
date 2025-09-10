@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //Switch to randomize required emojis based on theme (WIP)
     switch (theme) {
         case "Horror":
-            fetch('./emojis.json')  // Change from import() to fetch()
+            fetch('resources/emojis.json')  // Change from import() to fetch()
                 .then(response => response.json())
                 .then(emojiCatalog => {
                     const horrorEmojis = getEmojisByTheme(emojiCatalog, theme);
